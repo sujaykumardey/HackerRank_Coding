@@ -1,0 +1,19 @@
+def superReducedString(s):
+    a=[]
+    for i in s:
+        if i not in a:
+            a.append(i)
+    a.sort()
+    
+    for j in range(len(s)):
+        for i in a:
+            t=i*2
+            s=s.replace(t,"")
+        
+    if len(s)==0:
+        s="Empty String"
+    return s
+ 
+s=input()
+k=superReducedString(s)
+print(k)
