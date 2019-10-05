@@ -1,0 +1,24 @@
+def caesarCipher(s, k):
+    a=[x for x in s]
+    b=['-',"'"]
+    k=k%26
+    t=0
+    for i in range(len(s)):
+        
+        if a[i] in b:
+            continue
+        elif (a[i]).isdigit():
+            continue
+        elif (a[i]).isupper() and ord(a[i])+k > ord('Z'):
+            a[i]=chr((ord(a[i])+k)-26)
+        elif (a[i]).islower() and ord(a[i])+k > ord('z'):
+            a[i]=chr((ord(a[i])+k)-26)
+        elif (a[i]).isupper() or (a[i]).islower() :
+            a[i]=chr(ord(a[i])+k)
+               
+    s="".join(a)
+    return s
+    
+s=input()
+k=int(input())
+print(caesarCipher(s,k))
