@@ -1,0 +1,17 @@
+def pangrams(s):
+    
+    b=s.lower()
+    a=[chr(x) for x in range(97,123)]
+    c=[]
+    
+    for i in range(len(b)):
+        if b[i] in a:
+            if b[i] not in c:
+                c.append(b[i])
+    if len(c) ==len(a):
+        return "pangram"
+    else:
+        return "not pangram"
+s=input()
+result=pangrams(s)
+print(result)
